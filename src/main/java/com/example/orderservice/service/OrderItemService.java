@@ -5,8 +5,11 @@ import com.example.orderservice.dto.OrderItemDto;
 import java.util.List;
 
 public interface OrderItemService {
-    OrderItemDto create(OrderItemDto orderItemDto);
 
-    List<OrderItemDto> create(List<OrderItemDto> orderItemDto);
+    OrderItemDto findById(Long id);
+
+    OrderItemDto create(OrderItemDto orderItemDto, Long orderId);
+
+    List<OrderItemDto> create(List<OrderItemDto> orderItemDto, Long orderId);
 
 }

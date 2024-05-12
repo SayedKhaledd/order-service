@@ -15,13 +15,13 @@ public class OrderItemController {
     private final OrderItemService orderItemService;
 
 
-    @PostMapping
-    public OrderItemDto createOrderItem(@RequestBody @Valid OrderItemDto orderItemDto) {
-        return orderItemService.create(orderItemDto);
+    @PostMapping("/create/order/{orderId}")
+    public OrderItemDto createOrderItem(@RequestBody @Valid OrderItemDto orderItemDto, @PathVariable Long orderId) {
+        return orderItemService.create(orderItemDto, orderId);
     }
 
-    @PostMapping("/list")
-    public List<OrderItemDto> createOrderItems(@RequestBody @Valid List<OrderItemDto> orderItemDtos) {
-        return orderItemService.create(orderItemDtos);
+    @PostMapping("/create-list/order/{orderId}")
+    public List<OrderItemDto> createOrderItems(@RequestBody @Valid List<OrderItemDto> orderItemDtos, @PathVariable Long orderId) {
+        return orderItemService.create(orderItemDtos, orderId);
     }
 }
